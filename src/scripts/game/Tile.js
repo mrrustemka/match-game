@@ -1,4 +1,5 @@
 import { App } from "../system/App";
+import { gsap } from "gsap";
 
 export class Tile {
   constructor(color) {
@@ -10,5 +11,20 @@ export class Tile {
   setPosition(position) {
     this.sprite.x = position.x;
     this.sprite.y = position.y;
+  }
+
+  moveTo(position, duration) {
+    return new Promise((resolve) => {
+      gsap.to(this.sprite, {
+        duration,
+        pixi: {
+          x: position.x,
+          y: position.y,
+        },
+        onComplete: () => {
+          resolve();
+        },
+      });
+    });
   }
 }

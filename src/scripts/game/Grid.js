@@ -15,6 +15,17 @@ export class Grid {
     this.setPosition();
   }
 
+  swap(tile1, tile2) {
+    const tile1Field = tile1.field;
+    const tile2Field = tile2.field;
+
+    tile1Field.tile = tile2;
+    tile2.field = tile1Field;
+
+    tile2Field.tile = tile1;
+    tile1.field = tile2Field;
+  }
+
   create() {
     this.createFields();
     this.createTiles();
