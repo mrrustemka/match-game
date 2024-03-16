@@ -9,7 +9,7 @@ export const Config = {
     Game: Game,
   },
   grid: {
-    rows: 12,
-    cols: 12,
+    rows: 8,
+    cols: 8,
   },
 };

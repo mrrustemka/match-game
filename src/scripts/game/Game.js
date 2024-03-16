@@ -9,7 +9,7 @@ export class Game extends Scene {
     this.grid = new Grid();
     this.container.addChild(this.grid.container);
   }
-  
+
   createBackground() {
     this.bg = App.sprite("bg");
     this.bg.width = window.innerWidth;
