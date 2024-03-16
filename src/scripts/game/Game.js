@@ -1,13 +1,15 @@
 import { App } from "../system/App";
 import { Scene } from "../system/Scene";
-import { Field } from "./Field";
+import { Grid } from "./Grid";
 
 export class Game extends Scene {
   create() {
     this.createBackground();
-    const field = new Field(1, 1);
-    this.container.addChild(field.sprite);
+
+    this.grid = new Grid();
+    this.container.addChild(this.grid.container);
   }
+  
   createBackground() {
     this.bg = App.sprite("bg");
     this.bg.width = window.innerWidth;
