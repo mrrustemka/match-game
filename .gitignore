@@ -1,0 +1,26 @@
+# Fireball Projects
+library/
+temp/
+local/
+build/
+dist/
+releases/
+
+# npm files
+npm-debug.log
+node_modules/
+
+# files for debugger
+*.sln
+*.csproj
+*.pidb
+*.unityproj
+*.suo
+
+# OS generated files
+.DS_Store
+ehthumbs.db
+Thumbs.db
+
+# VS Code files
+.vscode/
