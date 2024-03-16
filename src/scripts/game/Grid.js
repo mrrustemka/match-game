@@ -36,9 +36,6 @@ export class Grid {
   }
 
   createTile(field) {
-    // const tile = new Tile("green");
-    // field.setTile(tile);
-    // this.container.addChild(tile.sprite);
     const tile = TileCreater.generate();
     field.setTile(tile);
     this.container.addChild(tile.sprite);

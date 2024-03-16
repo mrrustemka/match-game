@@ -21,10 +21,12 @@ export class Tile {
     this.sprite.y = position.y;
   }
 
-  moveTo(position, duration) {
+  moveTo(position, duration, delay, ease) {
     return new Promise((resolve) => {
       gsap.to(this.sprite, {
         duration,
+        delay,
+        ease,
         pixi: {
           x: position.x,
           y: position.y,
@@ -46,5 +48,9 @@ export class Tile {
       this.field.tile = null;
       this.field = null;
     }
+  }
+
+  fallDownTo(position, delay) {
+    return this.moveTo(position, 0.5, delay, "bounce.out");
   }
 }
