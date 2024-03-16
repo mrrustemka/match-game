@@ -74,4 +74,8 @@ export class Grid {
     this.container.y =
       (window.innerHeight - this.height) / 2 + this.fieldSize / 2;
   }
+
+  getField(row, col) {
+    return this.fields.find((field) => field.row === row && field.col === col);
+  }
 }

@@ -1,6 +1,7 @@
 import * as PIXI from "pixi.js";
 import { App } from "../system/App";
 import { Grid } from "./Grid";
+import { Combinations } from "./Combinations";
 
 export class Game {
   constructor() {
@@ -11,6 +12,8 @@ export class Game {
     this.container.addChild(this.grid.container);
 
     this.grid.container.on("tile-touch-start", this.onTileClick.bind(this));
+
+    this.combinations = new Combinations(this.grid);
   }
 
   onTileClick(tile) {
@@ -38,6 +41,8 @@ export class Game {
 
     tile.moveTo(selectedTile.field.position, 0.2).then(() => {
       this.grid.swap(selectedTile, tile);
+      const matches = this.combinations.getMatches();
+      console.log(matches);
       this.disabled = false;
       // if (!reverse) {
       //     const matches = this.combinationManager.getMatches();

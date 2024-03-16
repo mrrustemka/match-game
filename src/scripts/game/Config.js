@@ -13,4 +13,9 @@ export const Config = {
     cols: 8,
   },
   tilesColors: ["green", "orange", "brown", "red", "yellow-green", "yellow"  ],
+  combinationRules: [[
+    {col: 1, row: 0}, {col: 2, row: 0},
+], [
+    {col: 0, row: 1}, {col: 0, row: 2},
+]]
 };
