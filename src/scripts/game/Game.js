@@ -42,18 +42,10 @@ export class Game {
     tile.moveTo(selectedTile.field.position, 0.2).then(() => {
       this.grid.swap(selectedTile, tile);
       const matches = this.combinations.getMatches();
-      console.log(matches);
+      if (matches.length) {
+        this.processMatches(matches);
+      }
       this.disabled = false;
-      // if (!reverse) {
-      //     const matches = this.combinationManager.getMatches();
-      //     if (matches.length) {
-      //         this.processMatches(matches);
-      //     } else {
-      //         this.swap(tile, selectedTile, true);
-      //     }
-      // } else {
-      //     this.disabled = false;
-      // }
     });
   }
 
@@ -72,5 +64,17 @@ export class Game {
     this.bg.width = window.innerWidth;
     this.bg.height = window.innerHeight;
     this.container.addChild(this.bg);
+  }
+
+  processMatches(matches) {
+    this.removeMatches(matches);
+  }
+
+  removeMatches(matches) {
+    matches.forEach((element) => {
+      element.forEach((tile) => {
+        tile.remove();
+      });
+    });
   }
 }
