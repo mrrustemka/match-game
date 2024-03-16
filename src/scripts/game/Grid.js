@@ -2,6 +2,7 @@ import * as PIXI from "pixi.js";
 import { App } from "../system/App";
 import { Field } from "./Field";
 import { Tile } from "./Tile";
+import { TileCreater } from "./TileCreater";
 
 export class Grid {
   constructor() {
@@ -20,8 +21,23 @@ export class Grid {
   }
 
   createTiles() {
-    const tile = new Tile("green");
+    this.fields.forEach((field) => this.createTile(field));
+  }
+
+  createTile(field) {
+    // const tile = new Tile("green");
+    // field.setTile(tile);
+    // this.container.addChild(tile.sprite);
+    const tile = TileCreater.generate();
+    field.setTile(tile);
     this.container.addChild(tile.sprite);
+
+    tile.sprite.interactive = true;
+    tile.sprite.on("pointerdown", () => {
+      this.container.emit("tile-touch-start", tile);
+    });
+
+    return tile;
   }
 
   createFields() {
