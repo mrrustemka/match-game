@@ -8,6 +8,14 @@ export class Tile {
     this.sprite.anchor.set(0.5);
   }
 
+  isNeighbour(tile) {
+    return (
+      Math.abs(this.field.row - tile.field.row) +
+        Math.abs(this.field.col - tile.field.col) ===
+      1
+    );
+  }
+
   setPosition(position) {
     this.sprite.x = position.x;
     this.sprite.y = position.y;

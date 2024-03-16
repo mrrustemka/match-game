@@ -18,7 +18,12 @@ export class Game {
       return;
     }
     if (this.selectedTile) {
-      this.swap(this.selectedTile, tile);
+      if (!this.selectedTile.isNeighbour(tile)) {
+        this.clearSelection(tile);
+        this.selectTile(tile);
+      } else {
+        this.swap(this.selectedTile, tile);
+      }
     } else {
       this.selectTile(tile);
     }
