@@ -1,10 +1,10 @@
 import * as PIXI from "pixi.js";
 import { App } from "../system/App";
 
-export class Points {
+export class Turns {
   constructor() {
     this.container = new PIXI.Container();
-    const text = new PIXI.Text(App.config.points, {
+    const text = new PIXI.Text(App.config.turns, {
       align: "center",
       cacheAsBitmap: true,
       height: 57,
@@ -13,7 +13,7 @@ export class Points {
 
     this.sprite = App.sprite("field-selected");
     this.sprite.x = 1200;
-    this.sprite.y = 200;
+    this.sprite.y = 400;
     this.sprite.addChild(text);
   }
 }

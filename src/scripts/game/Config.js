@@ -23,5 +23,6 @@ export const Config = {
       { col: 0, row: 2 },
     ],
   ],
+  turns: 0,
   points: 0,
 };

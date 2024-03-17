@@ -3,6 +3,7 @@ import { App } from "../system/App";
 import { Grid } from "./Grid";
 import { Combinations } from "./Combinations";
 import { Points } from "./Points";
+import { Turns } from "./Turns";
 
 export class Game {
   constructor() {
@@ -35,6 +36,10 @@ export class Game {
   }
 
   swap(selectedTile, tile) {
+    App.config.turns++;
+    const turns = new Turns();
+    this.container.addChild(turns.sprite);
+
     this.disabled = true;
     this.clearSelection();
     selectedTile.sprite.zIndex = 2;
@@ -85,8 +90,8 @@ export class Game {
         tile.remove();
       });
     });
-    const result = new Points();
-    this.container.addChild(result.sprite);
+    const points = new Points();
+    this.container.addChild(points.sprite);
   }
 
   processFallDown() {
