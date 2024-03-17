@@ -42,7 +42,10 @@ export class Game {
   }
 
   swap(selectedTile, tile) {
-    App.config.turns++;
+    App.config.turns--;
+    if (App.config.turns <= 0) {
+      alert("Game over");
+    }
     const turns = new Turns();
     this.container.addChild(turns.sprite);
 
@@ -68,12 +71,6 @@ export class Game {
     if (App.config.turns % 5 === 0) {
       App.config.teleportCount++;
     }
-
-    // if (App.config.teleportCount > 0) {
-    //   App.config.teleport = true;
-    // }
-
-    console.log("teleport count", App.config.teleportCount);
   }
 
   clearSelection() {
@@ -111,6 +108,10 @@ export class Game {
     });
     const points = new Points();
     this.container.addChild(points.sprite);
+
+    if (App.config.points >= 36) {
+      alert("You Win");
+    }
   }
 
   processFallDown() {

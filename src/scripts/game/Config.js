@@ -23,8 +23,7 @@ export const Config = {
       { col: 0, row: 2 },
     ],
   ],
-  turns: 0,
+  turns: 10,
   points: 0,
-  // teleport: false,
   teleportCount: 1,
 };

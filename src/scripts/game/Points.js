@@ -16,4 +16,5 @@ export class Points {
     this.sprite.y = 200;
     this.sprite.addChild(text);
   }
+  
 }
