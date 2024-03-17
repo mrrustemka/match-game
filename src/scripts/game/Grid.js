@@ -1,8 +1,8 @@
 import * as PIXI from "pixi.js";
 import { App } from "../system/App";
 import { Field } from "./Field";
-import { Tile } from "./Tile";
 import { TileCreater } from "./TileCreater";
+import { Points } from "./Points";
 
 export class Grid {
   constructor() {

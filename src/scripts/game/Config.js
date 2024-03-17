@@ -9,8 +9,8 @@ export const Config = {
     Game: Game,
   },
   grid: {
-    rows: 8,
-    cols: 8,
+    rows: 5,
+    cols: 5,
   },
   tilesColors: ["green", "orange", "brown", "red", "yellow-green", "yellow"],
   combinationRules: [
@@ -23,4 +23,5 @@ export const Config = {
       { col: 0, row: 2 },
     ],
   ],
+  points: 0,
 };

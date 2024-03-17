@@ -2,6 +2,7 @@ import * as PIXI from "pixi.js";
 import { App } from "../system/App";
 import { Grid } from "./Grid";
 import { Combinations } from "./Combinations";
+import { Points } from "./Points";
 
 export class Game {
   constructor() {
@@ -73,18 +74,19 @@ export class Game {
   processMatches(matches) {
     this.removeMatches(matches);
     this.processFallDown()
-      .then(() =>
-        this.addTiles())
-      .then(() =>
-        this.onFallDownOver());
+      .then(() => this.addTiles())
+      .then(() => this.onFallDownOver());
   }
 
   removeMatches(matches) {
+    App.config.points += 2 + matches.length;
     matches.forEach((element) => {
       element.forEach((tile) => {
         tile.remove();
       });
     });
+    const result = new Points();
+    this.container.addChild(result.sprite);
   }
 
   processFallDown() {
@@ -146,6 +148,7 @@ export class Game {
     });
     ``;
   }
+
   onFallDownOver() {
     const matches = this.combinations.getMatches();
 
