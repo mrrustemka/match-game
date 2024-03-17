@@ -42,6 +42,7 @@ export class Game {
 
     tile.moveTo(selectedTile.field.position, 0.2).then(() => {
       this.grid.swap(selectedTile, tile);
+
       const matches = this.combinations.getMatches();
       if (matches.length) {
         this.processMatches(matches);
@@ -51,8 +52,10 @@ export class Game {
   }
 
   clearSelection() {
-    this.selectedTile.field.unselect();
-    this.selectedTile = null;
+    if (this.selectedTile) {
+      this.selectedTile.field.unselect();
+      this.selectedTile = null;
+    }
   }
 
   selectTile(tile) {
@@ -70,12 +73,10 @@ export class Game {
   processMatches(matches) {
     this.removeMatches(matches);
     this.processFallDown()
-      .then(() => {
-        this.addTiles();
-      })
-      .then(() => {
-        this.onFallDownOver();
-      });
+      .then(() =>
+        this.addTiles())
+      .then(() =>
+        this.onFallDownOver());
   }
 
   removeMatches(matches) {
