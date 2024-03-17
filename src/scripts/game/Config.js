@@ -12,7 +12,7 @@ export const Config = {
     rows: 8,
     cols: 8,
   },
-  tilesColors: ["green", "orange", "brown", "red", "yellow-green", "yellow"  ],
+  C: ["green", "orange", "brown", "red", "yellow-green", "yellow"  ],
   combinationRules: [[
     {col: 1, row: 0}, {col: 2, row: 0},
 ], [

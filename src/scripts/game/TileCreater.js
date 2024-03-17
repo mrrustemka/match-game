@@ -5,8 +5,8 @@ import { Tile } from "./Tile";
 export class TileCreater {
   static generate() {
     const color =
-      App.config.tilesColors[
-        Tools.randomNumber(0, App.config.tilesColors.length - 1)
+      App.config.C[
+        Tools.randomNumber(0, App.config.C.length - 1)
       ];
     return new Tile(color);
   }
