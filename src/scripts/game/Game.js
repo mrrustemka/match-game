@@ -4,6 +4,7 @@ import { Grid } from "./Grid";
 import { Combinations } from "./Combinations";
 import { Points } from "./Points";
 import { Turns } from "./Turns";
+import { Teleports } from "./Teleports";
 
 export class Game {
   constructor() {
@@ -25,8 +26,13 @@ export class Game {
     }
     if (this.selectedTile) {
       if (!this.selectedTile.isNeighbour(tile)) {
-        this.clearSelection(tile);
-        this.selectTile(tile);
+        if (App.config.teleportCount > 0) {
+          App.config.teleportCount--;
+          this.swap(this.selectedTile, tile);
+        } else {
+          this.clearSelection(tile);
+          this.selectTile(tile);
+        }
       } else {
         this.swap(this.selectedTile, tile);
       }
@@ -39,6 +45,9 @@ export class Game {
     App.config.turns++;
     const turns = new Turns();
     this.container.addChild(turns.sprite);
+
+    const teleports = new Teleports();
+    this.container.addChild(teleports.sprite);
 
     this.disabled = true;
     this.clearSelection();
@@ -55,6 +64,16 @@ export class Game {
       }
       this.disabled = false;
     });
+
+    if (App.config.turns % 5 === 0) {
+      App.config.teleportCount++;
+    }
+
+    // if (App.config.teleportCount > 0) {
+    //   App.config.teleport = true;
+    // }
+
+    console.log("teleport count", App.config.teleportCount);
   }
 
   clearSelection() {

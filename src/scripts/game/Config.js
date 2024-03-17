@@ -25,4 +25,6 @@ export const Config = {
   ],
   turns: 0,
   points: 0,
+  // teleport: false,
+  teleportCount: 1,
 };
