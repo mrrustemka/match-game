@@ -43,10 +43,7 @@ export class Game {
 
   swap(selectedTile, tile) {
     App.config.turns--;
-    if (App.config.turns <= 0) {
-      alert("Game over");
-    }
-    const turns = new Turns();
+    const turns = new Points();
     this.container.addChild(turns.sprite);
 
     const teleports = new Teleports();
@@ -109,8 +106,11 @@ export class Game {
     const points = new Points();
     this.container.addChild(points.sprite);
 
-    if (App.config.points >= 36) {
-      alert("You Win");
+    if (App.config.points >= 42) {
+      alert("Вы выиграли!");
+    }
+    if (App.config.turns <= 0) {
+      alert("Вы проиграли");
     }
   }
 

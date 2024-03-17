@@ -5,5 +5,6 @@ Gsap, Pixi.js
 <!-- 2. add turns -->
 <!-- 3. add super turn -->
 <!-- 4. add game result -->
-5. update images and background
+
+5. set assets
 6. create tab name

@@ -3,7 +3,7 @@ import { Tools } from "../system/Tools";
 
 export const Config = {
   loader: Tools.massiveRequire(
-    require["context"]("./../../images/", true, /\.(mp3|png|jpe?g)$/)
+    require["context"]("./../../images/", true, /\.(mp3|png|jpe?g|psb)$/)
   ),
   scenes: {
     Game: Game,
@@ -12,7 +12,8 @@ export const Config = {
     rows: 5,
     cols: 5,
   },
-  tilesColors: ["green", "orange", "brown", "red", "yellow-green", "yellow"],
+  tilesColors: ["blue", "green", "purple", "red", "yellow"],
+
   combinationRules: [
     [
       { col: 1, row: 0 },
