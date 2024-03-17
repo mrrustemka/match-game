@@ -3,8 +3,8 @@ import { App } from "../system/App";
 import { Grid } from "./Grid";
 import { Combinations } from "./Combinations";
 import { Points } from "./Points";
-import { Turns } from "./Turns";
 import { Teleports } from "./Teleports";
+import { Manual } from "./Manual";
 
 export class Game {
   constructor() {
@@ -18,6 +18,9 @@ export class Game {
 
     this.combinations = new Combinations(this.grid);
     this.removeStartMatches();
+
+    const manual = new Manual();
+    this.container.addChild(manual.sprite);
   }
 
   onTileClick(tile) {
