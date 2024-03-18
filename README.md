@@ -1,10 +1,1 @@
-Gsap, Pixi.js
-
-<!-- 7. fix position bug -->
-<!-- 1. add points -->
-<!-- 2. add turns -->
-<!-- 3. add super turn -->
-<!-- 4. add game result -->
-
-5. set assets
-6. create tab name
+https://mrrustemka.github.io/match-game/
