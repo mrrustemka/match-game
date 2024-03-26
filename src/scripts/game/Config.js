@@ -3,18 +3,20 @@ import { Tools } from "../system/Tools";
 
 export const Config = {
   loader: Tools.massiveRequire(
-    require["context"]("./../../images/", true, /\.(mp3|png|jpe?g|psb)$/)
+    require["context"]("./../../images/", true, /\.(mp3|png|jpe?g)$/)
   ),
   scenes: {
     Game: Game,
   },
   grid: {
-    rows: 5,
-    cols: 5,
+    // размер игрового поля N*M
+    rows: 5, // N
+    cols: 5, // M
   },
-  tilesColors: ["blue", "green", "purple", "red", "yellow"],
+  tilesColors: ["blue", "green", "purple", "red", "yellow"], // количество возможныхвариантов цветов (C)
 
   combinationRules: [
+    // правила комбинаций при попытки сжигании тайлов
     [
       { col: 1, row: 0 },
       { col: 2, row: 0 },
@@ -24,7 +26,7 @@ export const Config = {
       { col: 0, row: 2 },
     ],
   ],
-  turns: 10,
-  points: 0,
-  teleportCount: 1,
+  turns: 10, // колиечство ходов (Y)
+  points: 0, // количество очков (X)
+  teleportCount: 1, // количество бонусных ходов
 };

@@ -4,10 +4,10 @@ import { Tile } from "./Tile";
 
 export class TileCreater {
   static generate() {
-    const color =
+    return new Tile(
       App.config.tilesColors[
         Tools.randomNumber(0, App.config.tilesColors.length - 1)
-      ];
-    return new Tile(color);
+      ]
+    );
   }
 }

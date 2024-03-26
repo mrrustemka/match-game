@@ -19,8 +19,7 @@ export class Game {
     this.combinations = new Combinations(this.grid);
     this.removeStartMatches();
 
-    const manual = new Manual();
-    this.container.addChild(manual.sprite);
+    this.container.addChild(new Manual().sprite);
   }
 
   onTileClick(tile) {
@@ -46,11 +45,8 @@ export class Game {
 
   swap(selectedTile, tile) {
     App.config.turns--;
-    const turns = new Points();
-    this.container.addChild(turns.sprite);
-
-    const teleports = new Teleports();
-    this.container.addChild(teleports.sprite);
+    this.container.addChild(new Points().sprite);
+    this.container.addChild(new Teleports().sprite);
 
     this.disabled = true;
     this.clearSelection();
@@ -100,14 +96,13 @@ export class Game {
   }
 
   removeMatches(matches) {
-    App.config.points += 2 + matches.length;
+    App.config.points += matches[0].length + matches.length - 1;
     matches.forEach((element) => {
       element.forEach((tile) => {
         tile.remove();
       });
     });
-    const points = new Points();
-    this.container.addChild(points.sprite);
+    this.container.addChild(new Points().sprite);
 
     if (App.config.points >= 42) {
       alert("Вы выиграли!");
