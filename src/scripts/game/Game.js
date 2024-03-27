@@ -2,9 +2,10 @@ import * as PIXI from "pixi.js";
 import { App } from "../system/App";
 import { Grid } from "./Grid";
 import { Combinations } from "./Combinations";
-import { Points } from "./Points";
-import { Teleports } from "./Teleports";
-import { Manual } from "./Manual";
+import { Points } from "../visualization/Points";
+import { Teleports } from "../visualization/Teleports";
+import { Manual } from "../visualization/Manual";
+//divide the file
 
 export class Game {
   constructor() {

@@ -1,5 +1,6 @@
 import { App } from "../system/App";
 import { gsap } from "gsap";
+// divide the file
 
 export class Tile {
   constructor(color) {

@@ -1,6 +1,6 @@
 import { App } from "../system/App";
 import { Tools } from "../system/Tools";
-import { Tile } from "./Tile";
+import { Tile } from "../game/Tile";
 
 export class TileCreater {
   static generate() {
