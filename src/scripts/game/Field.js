@@ -1,5 +1,4 @@
-import { App } from "../system/App";
-// divide the file
+import { App } from "../visualization/App";
 
 export class Field {
   constructor(row, col) {

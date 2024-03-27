@@ -1,4 +1,4 @@
-import { App } from "../system/App";
+import { App } from "../visualization/App";
 import { gsap } from "gsap";
 // divide the file
 

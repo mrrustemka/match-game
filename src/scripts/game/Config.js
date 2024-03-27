@@ -1,5 +1,5 @@
 import { Game } from "./Game";
-import { Tools } from "../system/Tools";
+import { Tools } from "../visualization/Tools";
 
 export const Config = {
   loader: Tools.massiveRequire(
@@ -10,8 +10,8 @@ export const Config = {
   },
   grid: {
     // размер игрового поля N*M
-    rows: 5, // N
-    cols: 5, // M
+    rows: 3, // N
+    cols: 3, // M
   },
   tilesColors: ["blue", "green", "purple", "red", "yellow"], // количество возможныхвариантов цветов (C)
 

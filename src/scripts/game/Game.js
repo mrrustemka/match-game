@@ -1,11 +1,10 @@
 import * as PIXI from "pixi.js";
-import { App } from "../system/App";
+import { App } from "../visualization/App";
 import { Grid } from "./Grid";
 import { Combinations } from "./Combinations";
 import { Points } from "../visualization/Points";
 import { Teleports } from "../visualization/Teleports";
 import { Manual } from "../visualization/Manual";
-//divide the file
 
 export class Game {
   constructor() {
@@ -105,7 +104,7 @@ export class Game {
     });
     this.container.addChild(new Points().sprite);
 
-    if (App.config.points >= 42) {
+    if (App.config.points >= 420) {
       alert("Вы выиграли!");
     }
     if (App.config.turns <= 0) {

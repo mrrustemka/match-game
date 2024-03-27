@@ -1,5 +1,5 @@
 import * as PIXI from "pixi.js";
-import { App } from "../system/App";
+import { App } from "../visualization/App";
 import { Field } from "./Field";
 import { TileCreater } from "../visualization/TileCreater";
 //divide the file

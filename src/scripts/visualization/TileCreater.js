@@ -1,5 +1,5 @@
-import { App } from "../system/App";
-import { Tools } from "../system/Tools";
+import { App } from "./App";
+import { Tools } from "./Tools";
 import { Tile } from "../game/Tile";
 
 export class TileCreater {

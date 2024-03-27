@@ -1,4 +1,4 @@
-import { App } from "../system/App";
+import { App } from "../visualization/App";
 
 export class Combinations {
   constructor(grid) {
@@ -25,6 +25,7 @@ export class Combinations {
         });
 
         if (matches.length === rule.length + 1) {
+          // K = 3
           result.push(matches);
         }
       });

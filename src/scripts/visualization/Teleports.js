@@ -1,5 +1,5 @@
 import * as PIXI from "pixi.js";
-import { App } from "../system/App";
+import { App } from "./App";
 
 export class Teleports {
   constructor() {
