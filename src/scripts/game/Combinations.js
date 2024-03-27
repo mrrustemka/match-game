@@ -9,6 +9,8 @@ export class Combinations {
     let result = [];
 
     this.grid.fields.forEach((checkingField) => {
+      const mathcesNum = 3; // переопределяю К, которая по умолчанию равна 2
+
       App.config.combinationRules.forEach((rule) => {
         let matches = [checkingField.tile];
 
@@ -24,8 +26,7 @@ export class Combinations {
           }
         });
 
-        if (matches.length === rule.length + 1) {
-          // K = 3
+        if (matches.length === mathcesNum) {
           result.push(matches);
         }
       });
