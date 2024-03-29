@@ -10,8 +10,8 @@ export const Config = {
   },
   grid: {
     // размер игрового поля N*M
-    rows: 3, // N
-    cols: 3, // M
+    rows: 5, // N
+    cols: 5, // M
   },
   tilesColors: ["blue", "green", "purple", "red", "yellow"], // количество возможныхвариантов цветов (C)
 
@@ -26,8 +26,9 @@ export const Config = {
       { col: 0, row: 2 },
     ],
   ],
-  turns: 10, // колиечство ходов (Y)
+  turns: 5, // колиечство ходов (Y)
   points: 0, // количество очков (X)
   teleportCount: 1, // количество бонусных ходов
   matchesNum: 2, // количество тайлов для сжигания по умолчанию (K)
+  goal: 42,
 };

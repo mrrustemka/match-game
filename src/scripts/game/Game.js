@@ -124,14 +124,17 @@ export class Game {
       element.forEach((tile) => {
         tile.remove();
       });
-    });
+    });git 
     this.container.addChild(new Points().sprite);
 
-    if (App.config.points >= 42) {
-      alert("Вы выиграли!");
+    if (App.config.points >= App.config.goal) {
+      alert("Вы выиграли У вас " + App.config.points + "!");
     }
     if (App.config.turns <= 0) {
-      alert("Вы проиграли");
+      alert(
+        "Вы проиграли, вам не хватает " +
+          (App.config.goal - App.config.points).toString()
+      );
     }
   }
 
