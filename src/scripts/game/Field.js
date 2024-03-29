@@ -14,17 +14,24 @@ export class Field {
     this.sprite.addChild(this.selected);
     this.selected.visible = false;
     this.selected.anchor.set(0.5);
+    // console.log("9", "Field constructor");
   }
 
   unselect() {
+    // console.log("21", "unselect");
+
     this.selected.visible = false;
   }
 
   select() {
+    // console.log("22", "select");
+
     this.selected.visible = true;
   }
 
   get position() {
+    // console.log("8", "get position");
+
     return {
       x: this.col * this.sprite.width,
       y: this.row * this.sprite.height,
@@ -32,6 +39,8 @@ export class Field {
   }
 
   setTile(tile) {
+    // console.log("13", "setTile");
+
     this.tile = tile;
     tile.field = this;
     tile.setPosition(this.position);

@@ -9,20 +9,31 @@ import { Manual } from "../visualization/Manual";
 export class Game {
   constructor() {
     this.container = new PIXI.Container();
+    // console.log("1", "Game constructor 1");
     this.createBackground();
+    // console.log("3", "Game constructor 2");
 
     this.grid = new Grid();
+    // console.log("36", "Game constructor 3");
+
     this.container.addChild(this.grid.container);
+    // console.log("27", "Game constructor 4");
 
     this.grid.container.on("tile-touch-start", this.onTileClick.bind(this));
+    // console.log("29", "Game constructor 5");
 
     this.combinations = new Combinations(this.grid);
+    // console.log("32", "Game constructor 6");
+
     this.removeStartMatches();
+    // console.log("33", "Game constructor 7");
 
     this.container.addChild(new Manual().sprite);
   }
 
   onTileClick(tile) {
+    // console.log("23", "onTileClick");
+
     if (this.disabled) {
       return;
     }
@@ -44,6 +55,8 @@ export class Game {
   }
 
   swap(selectedTile, tile) {
+    // console.log("20", "swap");
+
     App.config.turns--;
     this.container.addChild(new Points().sprite);
     this.container.addChild(new Teleports().sprite);
@@ -70,6 +83,8 @@ export class Game {
   }
 
   clearSelection() {
+    // console.log("30", "clearSelection");
+
     if (this.selectedTile) {
       this.selectedTile.field.unselect();
       this.selectedTile = null;
@@ -77,11 +92,15 @@ export class Game {
   }
 
   selectTile(tile) {
+    // console.log("31", "selectTile");
+
     this.selectedTile = tile;
     this.selectedTile.field.select();
   }
 
   createBackground() {
+    // console.log("2", "createBackground");
+
     this.bg = App.sprite("bg");
     this.bg.width = window.innerWidth;
     this.bg.height = window.innerHeight;
@@ -89,6 +108,8 @@ export class Game {
   }
 
   processMatches(matches) {
+    // console.log("24", "processMatches");
+
     this.removeMatches(matches);
     this.processFallDown()
       .then(() => this.addTiles())
@@ -96,6 +117,8 @@ export class Game {
   }
 
   removeMatches(matches) {
+    // console.log("38", "removeMatches");
+
     App.config.points += matches[0].length + matches.length - 1;
     matches.forEach((element) => {
       element.forEach((tile) => {
@@ -104,7 +127,7 @@ export class Game {
     });
     this.container.addChild(new Points().sprite);
 
-    if (App.config.points >= 420) {
+    if (App.config.points >= 42) {
       alert("Вы выиграли!");
     }
     if (App.config.turns <= 0) {
@@ -113,6 +136,8 @@ export class Game {
   }
 
   processFallDown() {
+    // console.log("15", "processFallDown");
+
     return new Promise((resolve) => {
       let completed = 0;
       let started = 0;
@@ -136,6 +161,8 @@ export class Game {
   }
 
   fallDownTo(emptyField) {
+    // console.log("16", "fallDownTo");
+
     for (let row = emptyField.row - 1; row >= 0; row--) {
       let fallingField = this.grid.getField(row, emptyField.col);
 
@@ -152,6 +179,8 @@ export class Game {
   }
 
   addTiles() {
+    // console.log("17", "addTiles");
+
     return new Promise((resolve) => {
       const fields = this.grid.fields.filter((field) => field.tile === null);
       let total = fields.length;
@@ -168,11 +197,14 @@ export class Game {
           }
         });
       });
+      // console.log(fields);
     });
     ``;
   }
 
   onFallDownOver() {
+    // console.log("18", "onFallDownOver");
+
     const matches = this.combinations.getMatches();
 
     if (matches.length) {
@@ -183,10 +215,17 @@ export class Game {
   }
 
   removeStartMatches() {
+    // console.log("19", "removeStartMatches");
+
     let matches = this.combinations.getMatches();
 
     while (matches.length) {
-      this.removeMatches(matches);
+      // this.removeMatches(matches);
+      matches.forEach((element) => {
+        element.forEach((tile) => {
+          tile.remove();
+        });
+      });
 
       const fields = this.grid.fields.filter((field) => field.tile === null);
 

@@ -3,9 +3,12 @@ import { App } from "../visualization/App";
 export class Combinations {
   constructor(grid) {
     this.grid = grid;
+    // console.log("25", "Combinations constructor");
   }
 
   getMatches() {
+    // console.log("26", "getMatches");
+
     let result = [];
 
     this.grid.fields.forEach((checkingField) => {
