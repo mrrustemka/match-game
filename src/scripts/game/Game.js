@@ -21,7 +21,7 @@ export class Game {
 
     this.removeStartMatches();
 
-    // this.container.addChild(new Manual().sprite);
+    this.container.addChild(new Manual().sprite);
   }
 
   onTileClick(tile) {

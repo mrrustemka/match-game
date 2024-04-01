@@ -10,8 +10,8 @@ export const Config = {
   },
   grid: {
     // размер игрового поля N*M
-    rows: 3, // N
-    cols: 3, // M
+    rows: 5, // N
+    cols: 5, // M
   },
   tilesColors: ["blue", "green", "purple", "red", "yellow"], // количество возможныхвариантов цветов (C)
 
