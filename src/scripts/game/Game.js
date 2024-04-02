@@ -21,7 +21,7 @@ export class Game {
 
     this.removeStartMatches();
 
-    this.container.addChild(new Manual().sprite);
+    // this.container.addChild(new Manual().sprite);
   }
 
   onTileClick(tile) {
@@ -107,12 +107,13 @@ export class Game {
     this.container.addChild(new Points().sprite);
 
     if (App.config.points >= App.config.goal) {
-      alert("Вы выиграли У вас " + App.config.points + "!");
+      alert("You Win! You Have " + App.config.points + " Points!");
     }
     if (App.config.turns <= 0) {
       alert(
-        "Вы проиграли, вам не хватает " +
-          (App.config.goal - App.config.points).toString()
+        "Game Over! You Don't Have Enough " +
+          (App.config.goal - App.config.points).toString() +
+          " Points"
       );
     }
   }

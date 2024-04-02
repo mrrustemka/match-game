@@ -9,14 +9,12 @@ export const Config = {
     Game: Game,
   },
   grid: {
-    // размер игрового поля N*M
-    rows: 5, // N
-    cols: 5, // M
+    rows: 5,
+    cols: 5,
   },
-  tilesColors: ["blue", "green", "purple", "red", "yellow"], // количество возможныхвариантов цветов (C)
+  tilesColors: ["blue", "green", "purple", "red", "yellow"],
 
   combinationRules: [
-    // правила комбинаций при попытки сжигании тайлов
     [
       { col: 1, row: 0 },
       { col: 2, row: 0 },
@@ -26,9 +24,9 @@ export const Config = {
       { col: 0, row: 2 },
     ],
   ],
-  turns: 10, // колиечство ходов (Y)
-  points: 0, // количество очков (X)
-  teleportCount: 1, // количество бонусных ходов
-  matchesNum: 2, // количество тайлов для сжигания по умолчанию (K)
-  goal: 42, // цель игры
+  turns: 10, // number of turns
+  points: 0, // number of points
+  teleportCount: 1, // number of bonus turns
+  matchesNum: 2, // number of tiles to fire
+  goal: 42, // game goal
 };

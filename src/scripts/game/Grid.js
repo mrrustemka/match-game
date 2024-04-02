@@ -66,13 +66,11 @@ export class Grid {
     this.width = this.cols * this.fieldSize;
     this.height = this.rows * this.fieldSize;
     this.container.x =
-      (window.innerWidth - this.width) / 2 + this.fieldSize / 2;
-    this.container.y =
-      (window.innerHeight - this.height) / 2 + this.fieldSize / 2;
+      (window.innerWidth - this.width) / 6 + this.fieldSize / 6;
+    this.container.y = (window.innerHeight - this.height) / 2 + this.fieldSize;
   }
 
   getField(row, col) {
-    console.log(this.fields, row, col);
     return this.fields.find((field) => field.row === row && field.col === col);
   }
 }
