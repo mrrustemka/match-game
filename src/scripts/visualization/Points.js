@@ -5,11 +5,11 @@ export class Points {
   constructor() {
     this.container = new PIXI.Container();
     this.sprite = App.sprite("points");
-    this.sprite.x = 375;
-    this.sprite.y = 0;
+    this.sprite.x = 550;
+    this.sprite.y = 310;
 
     const textPoints = new PIXI.Text(
-      "Points: " + App.config.points + "/" + App.config.goal,
+      "Points" + App.config.points + "/" + App.config.goal,
       {
         align: "center",
         cacheAsBitmap: true,
@@ -21,7 +21,7 @@ export class Points {
       }
     );
 
-    const textTurns = new PIXI.Text("Steps: " + App.config.turns, {
+    const textTurns = new PIXI.Text("Steps" + App.config.turns, {
       align: "center",
       cacheAsBitmap: true,
       height: 57,

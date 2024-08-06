@@ -4,7 +4,7 @@ import { App } from "./App";
 export class Teleports {
   constructor() {
     this.container = new PIXI.Container();
-    const text = new PIXI.Text("Teleport: ", {
+    const text = new PIXI.Text("Teleport", {
       align: "center",
       cacheAsBitmap: true,
       height: 57,
@@ -26,8 +26,8 @@ export class Teleports {
     });
 
     this.sprite = App.sprite("bonus");
-    this.sprite.x = 150;
-    this.sprite.y = 0;
+    this.sprite.x = 600;
+    this.sprite.y = 130;
     this.sprite.addChild(text);
     this.sprite.addChild(value);
     text.anchor.set(-0.14, -1);
