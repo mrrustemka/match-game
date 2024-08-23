@@ -69,6 +69,14 @@ export class Game {
     if (App.config.turns % 5 === 0) {
       App.config.teleportCount++;
     }
+    if (App.config.turns < 0) {
+      alert(
+        "Game Over! You Don't Have Enough " +
+          (App.config.goal - App.config.points).toString() +
+          " Points"
+      );
+      location.reload();
+    }
   }
 
   clearSelection() {
@@ -108,14 +116,16 @@ export class Game {
 
     if (App.config.points >= App.config.goal) {
       alert("You Win! You Have " + App.config.points + " Points!");
-    }
-    if (App.config.turns <= 0) {
+      location.reload();
+    } else if (App.config.turns <= 0) {
       alert(
         "Game Over! You Don't Have Enough " +
           (App.config.goal - App.config.points).toString() +
           " Points"
       );
+      location.reload();
     }
+    
   }
 
   processFallDown() {
