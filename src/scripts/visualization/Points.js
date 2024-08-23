@@ -9,7 +9,7 @@ export class Points {
     this.sprite.y = 310;
 
     const textPoints = new PIXI.Text(
-      "Points" + App.config.points + "/" + App.config.goal,
+      "Points " + App.config.points + "/" + App.config.goal,
       {
         align: "center",
         cacheAsBitmap: true,
@@ -21,7 +21,7 @@ export class Points {
       }
     );
 
-    const textTurns = new PIXI.Text("Steps" + App.config.turns, {
+    const textTurns = new PIXI.Text("Steps " + App.config.turns, {
       align: "center",
       cacheAsBitmap: true,
       height: 57,
