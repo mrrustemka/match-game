@@ -1,1 +1,1 @@
-https://mrrustemka.github.io/match-game/
+https://rust-mr.github.io/match-game/
